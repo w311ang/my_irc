@@ -9,6 +9,8 @@ services:
     volumes:
       - ./ergo-data:/ircd 
     restart: unless-stopped
+    networks:
+      - shared-net
 
   qwebirc-frontend:
     image: tob1as/qwebirc:latest
