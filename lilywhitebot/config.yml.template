@@ -5,16 +5,16 @@
 #
 
 IRC:
-  disabled: true                            # 如果需要 IRC 机器人，请设置为 false
+  disabled: false                            # 如果需要 IRC 机器人，请设置为 false
   bot:
-    server: irc.libera.chat
-    nick: ""                                # IRC 暱稱
+    server: irc-backend
+    nick: "消息转发机器人"                                # IRC 暱稱
     userName: ""
     realName: ""
-    channels: ["#channel1", "#channel2"]    # 需要加入的頻道
+    channels: ["#chat"]    # 需要加入的頻道
     autoRejoin: true
     secure: true
-    port: 6697
+    port: 6667
     floodProtection: true
     floodProtectionDelay: 300
     sasl: false                             # 如果開啟 SASL，那麼需要正確設定前面的 userName 和下面的 sasl_password
@@ -135,20 +135,20 @@ transport:
   #    discord/ID 例如 discord/123123123123
   # 3. 如果需要，可以加入多個互聯體。例如将两个 QQ 分群连接到一起。
   groups:
-    - ['irc/#test', 'telegram/-12345678', 'qq/12345678']
+    - ['irc/#chat', 'qq/441015748']
     # 可以在同一组内增加软件相同、群号不同的群，例如
     # - ['irc/#test', 'telegram/-12345678', 'qq/12345678', 'qq/87654321']
     # 另外如有多组互联需求，可继续增加互联关系
 
   # 如果希望把同一軟體的多個群組連接到一起，可為不同的群組設置不同的別名，
   # 這樣互聯機器人在轉發訊息時會採用自訂群組名，以免混淆
-  aliases:
-    "qq/87665432": "分部"
-    "qq/12345678": ["简称", "本群全称"]
+  # aliases:
+    # "qq/87665432": "分部"
+    # "qq/12345678": ["简称", "本群全称"]
 
   # 如果需要设置单向转发/不转发，例如 Telegram 群不向 QQ 转发，请在下面设置
-  disables:
-    "telegram/-12345678": ["qq/12345678"]
+  # disables:
+    # "telegram/-12345678": ["qq/12345678"]
 
   options:
     IRC:
