@@ -45,6 +45,7 @@ services:
     environment:
       - NAPCAT_UID=${NAPCAT_UID}
       - NAPCAT_GID=${NAPCAT_GID}
+      - ACCOUNT=1
     ports:
       - 6099:6099
     volumes:
