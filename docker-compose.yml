@@ -18,7 +18,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./config.py:/qwebirc/config.py
+      - ./config.py:/qwebirc/config.py:ro
     restart: unless-stopped
     networks:
       - shared-net
