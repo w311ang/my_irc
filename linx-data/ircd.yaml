@@ -1018,7 +1018,7 @@ history:
     autoresize-window: 3d
 
     # number of messages to automatically play back on channel join (0 to disable):
-    autoreplay-on-join: 1
+    autoreplay-on-join: 50
 
     # maximum number of CHATHISTORY messages that can be
     # requested at once (0 disables support for CHATHISTORY)
