@@ -11,7 +11,7 @@ IRC:
     nick: "消息转发机器人"                                # IRC 暱稱
     userName: ""
     realName: ""
-    channels: ["#chat"]    # 需要加入的頻道
+    channels: ["#chat", "#test"]    # 需要加入的頻道
     autoRejoin: true
     secure: true
     port: 6667
@@ -136,6 +136,7 @@ transport:
   # 3. 如果需要，可以加入多個互聯體。例如将两个 QQ 分群连接到一起。
   groups:
     - ['irc/#chat', 'qq/${QQ_GROUP1}']
+    - ['irc/#test', 'qq/${QQ_GROUP2}']
     # 可以在同一组内增加软件相同、群号不同的群，例如
     # - ['irc/#test', 'telegram/-12345678', 'qq/12345678', 'qq/87654321']
     # 另外如有多组互联需求，可继续增加互联关系
