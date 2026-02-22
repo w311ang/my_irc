@@ -27,7 +27,8 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./linx-data:/data
+      - ./linx-data/files:/data/files
+      - ./linx-data/meta:/data/meta
     command: 
       - "-bind=0.0.0.0:8080"
       - "-sitename=Retro Storage"
