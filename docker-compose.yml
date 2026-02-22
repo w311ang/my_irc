@@ -2,13 +2,13 @@ version: '3.8'
 
 services:
   irc-backend:
-    image: inspircd/inspircd-docker:latest
-    container_name: my-irc-server
+    image: ghcr.io/ergochat/ergo:stable
+    container_name: my-ergo-server
     ports:
       - "6667:6667"
+    volumes:
+      - ./ergo-data:/ircd 
     restart: unless-stopped
-    networks:
-      - shared-net
 
   qwebirc-frontend:
     image: tob1as/qwebirc:latest
