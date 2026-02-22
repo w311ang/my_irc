@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  irc-backend:
+    image: inspircd/inspircd-docker:latest
+    container_name: my-irc-server
+    ports:
+      - "6667:6667"
+    restart: unless-stopped
+    networks:
+      - shared-net
+
+  qwebirc-frontend:
+    image: tob1as/qwebirc:latest
+    container_name: my-qwebirc
+    ports:
+      - "9090:9090"
+    depends_on:
+      - irc-backend
+    volumes:
+      - ./config.py:/qwebirc/config.py
+    restart: unless-stopped
+    networks:
+      - shared-net
+
+networks:
+  shared-net:
+    external: true
+    name: irc-shared-net
