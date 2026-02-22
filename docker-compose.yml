@@ -31,7 +31,6 @@ services:
     command: 
       - "-bind=0.0.0.0:8080"
       - "-sitename=Retro Storage"
-      - "-allowpublicupload=true"
     restart: unless-stopped
 
 networks:
