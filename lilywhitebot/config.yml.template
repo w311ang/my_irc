@@ -13,7 +13,7 @@ IRC:
     realName: ""
     channels: ["#chat", "#test"]    # 需要加入的頻道
     autoRejoin: true
-    secure: true
+    secure: false
     port: 6667
     floodProtection: true
     floodProtectionDelay: 300
