@@ -35,8 +35,6 @@ services:
     tty: true
     container_name: lilywhitebot
     restart: unless-stopped
-    ports:
-      - "3000:3000" # HTTP 監聽 / OneBot HTTP 上報端口
     environment:
       - TZ=Asia/Shanghai
     volumes:
@@ -47,10 +45,6 @@ services:
     environment:
       - NAPCAT_UID=${NAPCAT_UID}
       - NAPCAT_GID=${NAPCAT_GID}
-    ports:
-      - 3000:3000
-      - 3001:3001
-      - 6099:6099
     container_name: napcat
     restart: unless-stopped
     image: mlikiowa/napcat-docker:latest
