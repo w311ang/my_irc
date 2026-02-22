@@ -84,8 +84,8 @@ QQ:
     # 酷Q 及 CoolQ HTTP API 插件已停运
     # 如果使用 OICQ，请删除或注释以下参数
     apiRoot: "http://napcat:3000/"
-    accessToken: "${QQ_SECRET}"
-    secret: "${QQ_ACCESSTOKEN}"
+    accessToken: "${QQ_ACCESSTOKEN}"
+    secret: "${QQ_SECRET}"
     listen:                                 # 用于接收消息，需要同步修改 OneBot HTTP 上報參數配置
       host: "0.0.0.0"                     # 使用Docker时请设置成0.0.0.0
       port: 8080
