@@ -45,6 +45,8 @@ services:
     environment:
       - NAPCAT_UID=${NAPCAT_UID}
       - NAPCAT_GID=${NAPCAT_GID}
+    ports:
+      - 6099:6099
     container_name: napcat
     restart: unless-stopped
     image: mlikiowa/napcat-docker:latest
