@@ -18,10 +18,23 @@ services:
     depends_on:
       - irc-backend
     volumes:
-      - ./config.py:/qwebirc/config.py
+      - ./config.py:/qwebirc/config.py:ro
     restart: unless-stopped
     networks:
       - shared-net
+
+  file-host:
+    image: andreimarcu/linx-server:latest
+    container_name: my-file-host
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./linx-data:/data
+    command: 
+      - "-bind=0.0.0.0:8080"
+      - "-sitename=Retro Storage"
+      - "-allowpublicupload=true"
+    restart: unless-stopped
 
 networks:
   shared-net:
