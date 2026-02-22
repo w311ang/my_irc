@@ -9,8 +9,8 @@ IRC:
   bot:
     server: irc-backend
     nick: "BOT"                                # IRC 暱稱
-    userName: ""
-    realName: ""
+    userName: "bot"
+    realName: "Forwarding Bot"
     channels: ["#chat", "#test"]    # 需要加入的頻道
     autoRejoin: true
     secure: false
