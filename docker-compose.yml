@@ -31,7 +31,7 @@ services:
     restart: unless-stopped
 
   lilywhitebot:
-    image: ghcr.io/w311ang/lilywhitebot:latest
+    image: ghcr.io/w311ang/lilywhitebot:master
     tty: true
     container_name: lilywhitebot
     restart: unless-stopped
