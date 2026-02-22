@@ -1,6 +1,6 @@
 ```bash
 chown -R 65534:65534 linx-data/meta && chown -R 65534:65534 linx-data/files
-(source .env; envsubst <lilywhitebot/config.yml.template >lilywhitebot/config.yml)
+(set -a; source .env; envsubst <lilywhitebot/config.yml.template >lilywhitebot/config.yml)
 ```
 
 ```bash
