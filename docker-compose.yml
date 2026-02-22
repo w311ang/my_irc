@@ -7,8 +7,6 @@ services:
     volumes:
       - ./ergo-data:/ircd 
     restart: unless-stopped
-    networks:
-      - shared-net
 
   qwebirc-frontend:
     image: ghcr.io/tob1as/docker-qwebirc:latest
@@ -18,8 +16,6 @@ services:
     volumes:
       - ./qwebirc-config.py:/qwebirc/config.py:ro
     restart: unless-stopped
-    networks:
-      - shared-net
 
   file-host:
     image: andreimarcu/linx-server:latest
@@ -34,7 +30,27 @@ services:
       - "-sitename=Retro Storage"
     restart: unless-stopped
 
-networks:
-  shared-net:
-    external: true
-    name: irc-shared-net
+  lilywhitebot:
+    image: ghcr.io/w311ang/lilywhitebot:latest
+    tty: true
+    container_name: lilywhitebot
+    restart: unless-stopped
+    ports:
+      - "3000:3000" # HTTP 監聽 / OneBot HTTP 上報端口
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./lilywhitebot/config.yml:/home/node/lwb/config.yml:ro
+      - ./lilywhitebot/badwords.yml:/home/node/lwb/badwords.yml:ro
+
+  napcat:
+    environment:
+      - NAPCAT_UID=${NAPCAT_UID}
+      - NAPCAT_GID=${NAPCAT_GID}
+    ports:
+      - 3000:3000
+      - 3001:3001
+      - 6099:6099
+    container_name: napcat
+    restart: unless-stopped
+    image: mlikiowa/napcat-docker:latest
