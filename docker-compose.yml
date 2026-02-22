@@ -13,7 +13,7 @@ services:
       - shared-net
 
   qwebirc-frontend:
-    image: ghcr.io/tob1as/docker-qwebirc:stable
+    image: ghcr.io/tob1as/docker-qwebirc:latest
     container_name: my-qwebirc
     ports:
       - "9090:9090"
