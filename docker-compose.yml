@@ -17,8 +17,6 @@ services:
     container_name: my-qwebirc
     ports:
       - "9090:9090"
-    depends_on:
-      - irc-backend
     volumes:
       - ./config.py:/qwebirc/config.py:ro
     restart: unless-stopped
