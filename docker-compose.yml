@@ -12,7 +12,7 @@ services:
     image: ghcr.io/tob1as/docker-qwebirc:latest
     container_name: my-qwebirc
     ports:
-      - "9090:9090"
+      - "127.0.0.1:9090:9090"
     volumes:
       - ./qwebirc-config.py:/qwebirc/config.py:ro
     restart: unless-stopped
@@ -21,7 +21,7 @@ services:
     image: andreimarcu/linx-server:latest
     container_name: my-file-host
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
     volumes:
       - ./linx-data/files:/data/files
       - ./linx-data/meta:/data/meta
@@ -47,7 +47,7 @@ services:
       - NAPCAT_GID=${NAPCAT_GID}
       - ACCOUNT=${QQ_NUM}
     ports:
-      - 6099:6099
+      - 127.0.0.1:6099:6099
     volumes:
       - ./napcat/cache:/app/.config/QQ
       - ./napcat/config:/app/napcat/config
