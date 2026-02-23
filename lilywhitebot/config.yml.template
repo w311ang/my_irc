@@ -111,7 +111,7 @@ Discord:
 
 # 系统日志
 logging:
-  level: debug                               # 日志等级：从详细到简单分别是 debug、info、warning、error，推荐用 info
+  level: info                               # 日志等级：从详细到简单分别是 debug、info、warning、error，推荐用 info
   logfile: ""                               # 日志文件名，如留空则只向屏幕输出
 
 # 启用的插件（繁体字用户叫套件）
